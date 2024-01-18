@@ -1,7 +1,4 @@
-﻿using System.Net;
-using static System.Formats.Asn1.AsnWriter;
-
-namespace GarbageCollector
+﻿namespace GarbageCollector
 {
     public class Shop: IDisposable
     {
@@ -15,21 +12,11 @@ namespace GarbageCollector
             StoreAdress = storeAdress;
             TypeOfStore = typeOfStore;
         }
-        public void Dispose()
-        {
-            Console.WriteLine($"{StoreName} was dispose");
-        }
+        ~Shop() => Console.WriteLine($"{StoreName} has deleted");
+        public void Dispose() => Console.WriteLine($"{StoreName} was dispose");
         public void ShowStore()
         {
             Console.WriteLine($"Shop name: {StoreName}\nShop adress: {StoreAdress}\nType of store: {TypeOfStore}");
         }
-
-        //        Реалізуйте у класі методи та властивості, необхідні для функціонування класу.
-
-        //Клас має реалізовувати інтерфейс IDisposable.
-
-        //Напишіть код для тестування функціональності класу.
-
-        //Напишіть код для виклику методу Dispose.
     }
 }
